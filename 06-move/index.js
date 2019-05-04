@@ -4,7 +4,7 @@ import * as TWEENJS from '@tweenjs/tween.js';
 const playerMoveTween = new TWEENJS.Group();
 
 /** プレイヤーが1/1000秒間で移動する距離 */
-const playerMoveSpeed = 128 / 1000;
+const playerMoveSpeed = 512 / 1000;
 
 /** プレイヤー情報 */
 const player = {
