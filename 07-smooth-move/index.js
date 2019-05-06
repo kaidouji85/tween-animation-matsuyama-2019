@@ -37,6 +37,9 @@ requestAnimationFrame(gameLoop);
  * @param {number} y 移動先Y座標
  */
 function movePlayer({x, y}) {
+  TWEENJS.default.update();
+  TWEENJS.default.removeAll();
+
   const distance = Math.sqrt(Math.pow(player.x - x, 2) + Math.pow(player.y - y , 2));
   const duration = distance / playerMoveSpeed;
   const tween = new TWEENJS.Tween(player)

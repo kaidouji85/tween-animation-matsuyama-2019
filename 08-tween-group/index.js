@@ -1,5 +1,8 @@
 import * as TWEENJS from '@tweenjs/tween.js';
 
+/** プレイヤーの移動に関するTween */
+const playerMoveTween = new TWEENJS.Group();
+
 /** プレイヤーが1/1000秒間で移動する距離 */
 const playerMoveSpeed = 512 / 1000;
 
@@ -25,7 +28,7 @@ window.onload = () => {
  */
 function gameLoop(time) {
   requestAnimationFrame(gameLoop);
-  TWEENJS.default.update(time);
+  playerMoveTween.update(time);
   setPlayerPosition(player);
 }
 requestAnimationFrame(gameLoop);
@@ -37,9 +40,12 @@ requestAnimationFrame(gameLoop);
  * @param {number} y 移動先Y座標
  */
 function movePlayer({x, y}) {
+  playerMoveTween.update();
+  playerMoveTween.removeAll();
+
   const distance = Math.sqrt(Math.pow(player.x - x, 2) + Math.pow(player.y - y , 2));
   const duration = distance / playerMoveSpeed;
-  const tween = new TWEENJS.Tween(player)
+  const tween = new TWEENJS.Tween(player, playerMoveTween)
     .to({x: x, y: y}, duration);
   tween.start();
 }
