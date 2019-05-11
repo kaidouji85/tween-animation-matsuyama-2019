@@ -11,8 +11,7 @@ let player = {
 /** メイン関数 */
 window.onload = () => {
   const animation = new TWEENJS.Tween(player)
-    .to({x: '+200'}, 1000)
-    .repeat(Infinity);
+    .to({x: 800}, 5000);
   animation.start();
 };
 
