@@ -5,15 +5,15 @@ let player = {
   /** x座標 */
   x: 0,
   /** y座標 */
-  y: 128
+  y: 256
 };
 
 /** メイン関数 */
 window.onload = () => {
   const upMove = new TWEENJS.Tween(player)
-    .to({x: '+200', y: '+200'}, 1000);
-  const downMove = new TWEENJS.Tween(player)
     .to({x: '+200', y: '-200'}, 1000);
+  const downMove = new TWEENJS.Tween(player)
+    .to({x: '+200', y: '+200'}, 1000);
 
   upMove.chain(downMove);
   downMove.chain(upMove);

@@ -3,7 +3,7 @@ let player = {
   /** x座標 */
   x: 0,
   /** y座標 */
-  y: 128
+  y: 256
 };
 
 /** 上に移動しているかのフラグ、trueで上に移動している */
@@ -21,7 +21,7 @@ function gameLoop(time) {
   requestAnimationFrame(gameLoop);
 
   player.x += 4;
-  player.y += isUpMove ? 4 : -4;
+  player.y += isUpMove ? -4 : 4;
 
   inYAxisMoveCycleCount ++;
   if (30 <= inYAxisMoveCycleCount) {
