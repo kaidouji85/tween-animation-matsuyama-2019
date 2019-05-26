@@ -12,10 +12,10 @@ let player = {
 window.onload = () => {
   const upMove = new TWEENJS.Tween(player)
     .to({x: '+200', y: '-200'}, 1000)
-    .easing(TWEENJS.Easing.Quadratic.Out);
+    .easing(TWEENJS.Easing.Quadratic.In);
   const downMove = new TWEENJS.Tween(player)
     .to({x: '+200', y: '+200'}, 1000)
-    .easing(TWEENJS.Easing.Quadratic.In);
+    .easing(TWEENJS.Easing.Quadratic.Out);
 
   upMove.chain(downMove);
   downMove.chain(upMove);
