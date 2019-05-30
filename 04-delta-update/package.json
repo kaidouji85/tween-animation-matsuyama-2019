@@ -4,7 +4,8 @@
   "description": "sample code for pronama matuyama 2019.",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "build": "parcel build --public-url ./ index.html"
   },
   "author": "",
   "license": "ISC",
